@@ -12,6 +12,6 @@ COPY . .
 FROM node:lts-slim
 WORKDIR /app
 COPY --from=build /app /app
-RUN apt-get update > /dev/null && apt-get install -y jq curl dnsutils netcat > /dev/null
+RUN apt-get update > /dev/null && apt-get install -y jq curl dnsutils netcat-traditional > /dev/null
 COPY scripts/docker/run.sh /run.sh
 CMD bash /run.sh
